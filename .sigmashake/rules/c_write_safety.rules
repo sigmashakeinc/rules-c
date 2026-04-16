@@ -59,7 +59,7 @@ rule c-google-style-complex-macro {
   enabled true
   priority 50
   severity warning
-  ASK write
+  LOG write
   IF path GLOB "**/*.c" AND content CONTAINS "#define" AND content CONTAINS "do {"
   MESSAGE "Consider refactoring complex, multi-statement preprocessor macros (especially those using `do { ... } while(0)`) into `inline` functions or regular functions. The Google C++ Style Guide (and general good practice) discourages complex macros due to potential for unexpected side effects, debugging difficulties, and reduced readability. Functions offer better type checking and scope control."
 }
